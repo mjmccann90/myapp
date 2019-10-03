@@ -1,0 +1,81 @@
+{
+  "animals": [
+    {
+      "id": 1,
+      "name": "Huxley",
+      "breed": "Golden Chow Mix",
+      "url": "Huxley.jpg",
+      "employeeId": 1
+    },
+    {
+      "id": 2,
+      "name": "Stella",
+      "breed": "Lab",
+      "url": "Stella.jpg",
+      "employeeId": 2
+    },
+    {
+      "id": 3,
+      "name": "Rose",
+      "breed": "Labrador",
+      "url": "Rose.jpg",
+      "employeeId": 3
+    },
+    {
+      "name": "Baxter",
+      "breed": "Boxer",
+      "id": 4,
+      "url": "",
+      "employeeId": 4
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "E1 "
+    },
+    {
+      "id": 2,
+      "name": "E2"
+    },
+    {
+      "id": 3,
+      "name": "E3"
+    },
+    {
+      "name": "E4",
+      "id": 4
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "name": "Jack's",
+      "address": "2400 Oakland Ave"
+    },
+    {
+      "id": 2,
+      "name": "Mark's",
+      "address": "2400 Oakland Ave Unit A"
+    },
+    {
+      "id": 3,
+      "name": "Dad's",
+      "address": "920 Sneed Road"
+    }
+  ],
+  "owners": [
+    {
+      "id": 1,
+      "name": "Jack"
+    },
+    {
+      "id": 2,
+      "name": "Mark"
+    },
+    {
+      "id": 3,
+      "name": "Dad"
+    }
+  ]
+}
