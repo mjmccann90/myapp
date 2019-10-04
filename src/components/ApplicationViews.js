@@ -24,13 +24,15 @@ import Login from './auth/Login'
 class ApplicationViews extends Component {
   // Check if credentials are in local storage
   //returns true/false
-  isAuthenticated = () => localStorage.getItem("credentials") !== null
+
 
   render() {
 
     return (
       <React.Fragment>
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={props => {
+          return <Login setUser={this.props.setUser} {...props} />
+        }} />
 
         <Route exact path="/" render={(props) => {
           return <Home />
@@ -38,14 +40,11 @@ class ApplicationViews extends Component {
 
 
         <Route exact path="/animals" render={props => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <AnimalList {...props} />
           } else {
             return <Redirect to="/login" />
           }
-        }} />
-        <Route path="/animals/:animalId(\d+)" render={(props) => {
-          return <AnimalDetail animalId={parseInt(props.match.params.animalId)} {...props} />
         }} />
         <Route path="/animals/new" render={(props) => {
           return <AnimalForm {...props} />
@@ -61,7 +60,7 @@ class ApplicationViews extends Component {
 
 
         <Route exact path="/locations" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <LocationList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -85,7 +84,7 @@ class ApplicationViews extends Component {
 
 
         <Route exact path="/Employee" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <EmployeeList {...props} />
           } else {
             return <Redirect to="/login" />
@@ -104,7 +103,7 @@ class ApplicationViews extends Component {
 
 
         <Route exact path="/owner" render={(props) => {
-          if (this.isAuthenticated()) {
+          if (this.props.user) {
             return <OwnerList {...props} />
           } else {
             return <Redirect to="/login" />

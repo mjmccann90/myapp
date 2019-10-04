@@ -15,14 +15,14 @@ class AnimalDetail extends Component {
     handleDelete = () => {
       //invoke the delete function in AnimalManger and re-direct to the animal list.
       this.setState({loadingStatus: true})
-      helpers.delete("animal", this.props.animalId)
+      helpers.delete("animals", this.props.animalId)
       .then(() => this.props.history.push("/animals"))
   }
 
     componentDidMount(){
         console.log("AnimalDetail: ComponentDidMount");
         //get(id) from AnimalManager and hang on to that data; put it into state
-        helpers.get("animal", this.props.animalId)
+        helpers.get("animals", this.props.animalId)
         .then((animal) => {
             this.setState({
                 name: animal.name,
@@ -35,14 +35,13 @@ class AnimalDetail extends Component {
     }
 
     render() {
-      if (this.state.loadingStatus)
-        return <p>Loaing...</p>;
+      if (this.state.loadingStatus) return <p>Loaing...</p>;
 
       return (
         <div className="card">
           <div className="card-content">
             <picture>
-              <img src={require(`./Images/${this.state.imgUrl}`)} alt="My Dog" />
+              <img className="shadow" src={require(`./Images/${this.state.imgUrl}`)} alt="My Dog" />
             </picture>
             <h3>Name: <span style={{ color: 'darkslategrey' }}>{this.state.name}</span></h3>
             <p>Breed: {this.state.breed}</p>

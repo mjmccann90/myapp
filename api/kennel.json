@@ -22,10 +22,10 @@
       "employeeId": 3
     },
     {
-      "name": "Baxter",
-      "breed": "Boxer",
       "id": 4,
-      "url": "",
+      "name": "Ghost",
+      "breed": "Dire Wolf",
+      "url": "Ghost.jpg",
       "employeeId": 4
     }
   ],

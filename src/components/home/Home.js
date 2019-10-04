@@ -10,7 +10,7 @@ class Home extends Component {
       </address>
       <div className="card">
         <picture>
-          <img class="huerotate" src={require('./Stella.jpg')} alt="My Dog" />
+          <img className="shadow" src={require('./Stella.jpg')} alt="My Dog" />
         </picture>
       </div>
       </>
